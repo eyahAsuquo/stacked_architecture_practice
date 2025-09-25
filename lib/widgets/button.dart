@@ -6,12 +6,14 @@ class Button extends StatelessWidget {
     this.text,
     this.icon, {
     this.outline = true,
+    required this.onPressed,
     super.key,
   });
 
   final String text;
   final IconData? icon;
   final bool outline;
+  final Function() onPressed;
 
   @override
   Widget build(BuildContext context) {

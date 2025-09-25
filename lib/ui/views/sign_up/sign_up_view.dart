@@ -83,7 +83,11 @@ class SignUpView extends StackedView<SignUpViewModel> {
                 child: const ColoredText(text: "Forgot Password?"),
               ),
               const SizedBox(height: 20),
-              const Button("Sign-up", Icons.arrow_forward),
+              Button(
+                "Sign-up",
+                Icons.arrow_forward,
+                onPressed: () => viewModel.signup(),
+              ),
             ],
           ),
         ),

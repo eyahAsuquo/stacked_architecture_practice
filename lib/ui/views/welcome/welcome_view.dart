@@ -46,19 +46,16 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
           ]),
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           children: [
-            Button("Sign-in", Icons.arrow_forward),
-            SizedBox(
+            Button("Sign-in", Icons.arrow_forward, onPressed: viewModel.logIn),
+            const SizedBox(
               height: 20,
             ),
-            Button(
-              "Sign-Up",
-              Icons.arrow_forward,
-              outline: false,
-            )
+            Button("Sign-Up", Icons.arrow_forward,
+                outline: false, onPressed: viewModel.getStarted)
           ],
         ),
       ),
