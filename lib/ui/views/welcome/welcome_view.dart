@@ -5,7 +5,7 @@ import 'package:stacked/stacked.dart';
 import 'welcome_viewmodel.dart';
 
 class WelcomeView extends StackedView<WelcomeViewModel> {
-  const WelcomeView({Key? key}) : super(key: key);
+  const WelcomeView({super.key});
 
   @override
   Widget builder(
@@ -50,12 +50,18 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           children: [
-            Button("Sign-in", Icons.arrow_forward, onPressed: viewModel.logIn),
-            const SizedBox(
-              height: 20,
+            Button(
+              "Sign up",
+              Icons.arrow_forward,
+              outline: false,
+              onPressed: () => viewModel.goToSinUpScreen(),
             ),
-            Button("Sign-Up", Icons.arrow_forward,
-                outline: false, onPressed: viewModel.getStarted)
+            const SizedBox(height: 20),
+            Button(
+              "Log in",
+              Icons.arrow_forward,
+              onPressed: () => viewModel.goToLogInScreen(),
+            ),
           ],
         ),
       ),

@@ -6,7 +6,7 @@ import 'package:stacked/stacked.dart';
 import 'otp_viewmodel.dart';
 
 class OtpView extends StackedView<OtpViewModel> {
-  const OtpView({Key? key}) : super(key: key);
+  const OtpView({super.key});
 
   @override
   Widget builder(

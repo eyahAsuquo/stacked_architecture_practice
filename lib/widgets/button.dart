@@ -32,7 +32,7 @@ class Button extends StatelessWidget {
                   foregroundColor: AppColors.colorWhite,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 20)),
-              onPressed: () {},
+              onPressed: onPressed,
               child: Row(
                 children: [
                   Text(
@@ -56,7 +56,7 @@ class Button extends StatelessWidget {
                   foregroundColor: AppColors.primaryColor,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 20)),
-              onPressed: () {},
+              onPressed: onPressed,
               child: Row(
                 children: [
                   Text(

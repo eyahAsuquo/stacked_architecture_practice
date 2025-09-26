@@ -8,7 +8,7 @@ import 'get_otp_viewmodel.dart';
 class GetOtpView extends StackedView<GetOtpViewModel> {
   //
   final String phoneNumber;
-  const GetOtpView({required this.phoneNumber, Key? key}) : super(key: key);
+  const GetOtpView({required this.phoneNumber, super.key});
 
   @override
   Widget builder(
@@ -31,7 +31,7 @@ class GetOtpView extends StackedView<GetOtpViewModel> {
               ),
               BodyText(text: "Enter OTP sent to $phoneNumber "),
               const SizedBox(height: 30),
-              const BodyText(text: "Enter Mobile Number"),
+              const BodyText(text: "Enter OTP Number"),
               const SizedBox(height: 10),
               const SizedBox(height: 50),
               Button("Verify", Icons.arrow_forward_rounded, onPressed: () {})

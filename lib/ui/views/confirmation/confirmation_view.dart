@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'confirmation_viewmodel.dart';
 
 class ConfirmationView extends StackedView<ConfirmationViewModel> {
-  const ConfirmationView({Key? key}) : super(key: key);
+  const ConfirmationView({super.key});
 
   @override
   Widget builder(

@@ -6,13 +6,13 @@ import 'package:stacked_services/stacked_services.dart';
 class WelcomeViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
-  void getStarted() {
-    _navigationService.navigateToSignUpView();
+  void goToSinUpScreen() {
     print("Sign-up Button clicked");
+    _navigationService.replaceWith(Routes.signUpView);
   }
 
-  void logIn() {
-    _navigationService.navigateToSigninView();
+  void goToLogInScreen() {
     print("Log-In Button clicked");
+    // _navigationService.replaceWith(Routes.signinView);
   }
 }

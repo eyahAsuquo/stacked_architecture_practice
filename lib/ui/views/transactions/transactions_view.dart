@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'transactions_viewmodel.dart';
 
 class TransactionsView extends StackedView<TransactionsViewModel> {
-  const TransactionsView({Key? key}) : super(key: key);
+  const TransactionsView({super.key});
 
   @override
   Widget builder(

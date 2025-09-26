@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'launch_viewmodel.dart';
 
 class LaunchView extends StackedView<LaunchViewModel> {
-  const LaunchView({Key? key}) : super(key: key);
+  const LaunchView({super.key});
 
   @override
   Widget builder(

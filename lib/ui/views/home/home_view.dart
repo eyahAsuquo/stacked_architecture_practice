@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:my_test_app/widgets/text.dart';
 import 'package:stacked/stacked.dart';
 
 import 'home_viewmodel.dart';
 
 class HomeView extends StackedView<HomeViewModel> {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   Widget builder(
@@ -13,7 +14,9 @@ class HomeView extends StackedView<HomeViewModel> {
     Widget? child,
   ) {
     return const Scaffold(
-      body: Center(),
+      body: Center(
+        child: CaptionText(text: "WELCOME HOME"),
+      ),
     );
   }
 

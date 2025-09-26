@@ -6,7 +6,7 @@ import 'package:stacked/stacked.dart';
 import 'signin_viewmodel.dart';
 
 class SigninView extends StackedView<SigninViewModel> {
-  const SigninView({Key? key}) : super(key: key);
+  const SigninView({super.key});
 
   @override
   Widget builder(

@@ -4,7 +4,7 @@ import 'package:stacked/stacked.dart';
 import 'create_cards_viewmodel.dart';
 
 class CreateCardsView extends StackedView<CreateCardsViewModel> {
-  const CreateCardsView({Key? key}) : super(key: key);
+  const CreateCardsView({super.key});
 
   @override
   Widget builder(
