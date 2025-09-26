@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_test_app/ui/common/ui_helpers.dart';
+import 'package:my_test_app/widgets/button.dart';
 import 'package:my_test_app/widgets/text.dart';
 import 'package:stacked/stacked.dart';
 
@@ -13,9 +15,15 @@ class HomeView extends StackedView<HomeViewModel> {
     HomeViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
-      body: Center(
-        child: CaptionText(text: "WELCOME HOME"),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 40),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CaptionText(text: "WELCOME HOME"),
+          ],
+        ),
       ),
     );
   }

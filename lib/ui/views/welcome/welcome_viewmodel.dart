@@ -7,12 +7,10 @@ class WelcomeViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
 
   void goToSinUpScreen() {
-    print("Sign-up Button clicked");
     _navigationService.replaceWith(Routes.signUpView);
   }
 
   void goToLogInScreen() {
-    print("Log-In Button clicked");
-    // _navigationService.replaceWith(Routes.signinView);
+    _navigationService.replaceWith(Routes.signinView);
   }
 }
