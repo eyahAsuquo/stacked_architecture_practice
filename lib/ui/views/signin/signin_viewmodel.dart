@@ -17,7 +17,7 @@ class SigninViewModel extends BaseViewModel {
     //
 
     //navigation
-    _navigationService.navigateToHomeView();
+    _navigationService.navigateToBottomNavView();
   }
 
   void showPassword() {
