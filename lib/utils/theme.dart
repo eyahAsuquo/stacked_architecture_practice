@@ -9,59 +9,50 @@ class AppColors {
 }
 
 ThemeData theme = ThemeData(
-    useMaterial3: true,
+  useMaterial3: true,
 //seed Color
-    colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
+  colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
 
 //scaffold theme
-    scaffoldBackgroundColor: AppColors.colorWhite,
+  scaffoldBackgroundColor: AppColors.colorWhite,
 
 //text theme
 
-    textTheme: TextTheme(
-      bodyMedium: TextStyle(
-        fontSize: 14,
-        color: AppColors.primaryColor,
-      ),
-      //
-      //
-      bodySmall: TextStyle(
-        fontSize: 16,
-        color: AppColors.colorBlack,
-      ),
-      //
-      headlineMedium: TextStyle(
-          fontSize: 25,
-          fontWeight: FontWeight.bold,
-          color: AppColors.colorBlack,
-          letterSpacing: 1,
-          fontFamily: "Ultra"),
-      //
-      //
-      titleMedium: TextStyle(
-        fontSize: 18,
-        color: AppColors.colorBlack,
-        fontWeight: FontWeight.bold,
-        letterSpacing: 2,
-      ),
+  textTheme: TextTheme(
+    bodyMedium: TextStyle(
+      fontSize: 14,
+      color: AppColors.primaryColor,
     ),
-    inputDecorationTheme: InputDecorationTheme(
-      suffixIconColor: AppColors.colorBlack,
-      labelStyle: TextStyle(color: AppColors.colorBlack),
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: AppColors.primaryColor),
-      ),
-      //
-      //
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: AppColors.primaryColor, width: 2.5),
-      ),
-      //
-      //
-      enabledBorder: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(20),
-        borderSide: BorderSide(color: AppColors.colorBlack, width: 1.5),
-      ),
-    ));
+    //
+    //
+    bodySmall: TextStyle(
+      fontSize: 16,
+      color: AppColors.colorBlack,
+    ),
+    //
+    headlineMedium: TextStyle(
+        fontSize: 25,
+        fontWeight: FontWeight.bold,
+        color: AppColors.colorBlack,
+        letterSpacing: 1,
+        fontFamily: "Ultra"),
+    //
+    //
+    titleMedium: TextStyle(
+      fontSize: 18,
+      color: AppColors.colorBlack,
+      fontWeight: FontWeight.bold,
+      letterSpacing: 2,
+    ),
+  ),
+  inputDecorationTheme: InputDecorationTheme(
+    suffixIconColor: AppColors.colorBlack,
+    labelStyle: TextStyle(color: AppColors.colorBlack),
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(20),
+      borderSide: BorderSide(color: AppColors.primaryColor),
+    ),
+    //
+    //
+  ),
+);

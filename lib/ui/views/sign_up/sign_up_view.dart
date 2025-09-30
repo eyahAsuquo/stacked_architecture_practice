@@ -78,10 +78,6 @@ class SignUpView extends StackedView<SignUpViewModel> {
                 obscureText: viewModel.obScureText,
                 controller: viewModel.passwordControler,
               ),
-              TextButton(
-                onPressed: () {},
-                child: const ColoredText(text: "Forgot Password?"),
-              ),
               const SizedBox(height: 20),
               Button(
                 "Sign-up",

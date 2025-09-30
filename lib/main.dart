@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       theme: theme,
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.homeView,
+      initialRoute: Routes.bottomNavView,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [StackedService.routeObserver],

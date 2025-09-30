@@ -69,9 +69,7 @@ class SigninView extends StackedView<SigninViewModel> {
                 decoration: InputDecoration(
                   label: const BodyText(text: "Password"),
                   suffixIcon: IconButton(
-                      onPressed: () {
-                        viewModel.login();
-                      },
+                      onPressed: () => viewModel.showPassword(),
                       // ignore: prefer_const_constructors
                       icon: Icon(Icons.lock)),
                 ),

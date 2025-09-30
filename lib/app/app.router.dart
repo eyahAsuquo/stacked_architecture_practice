@@ -6,8 +6,9 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i13;
+import 'package:flutter/material.dart' as _i16;
 import 'package:flutter/material.dart';
+import 'package:my_test_app/ui/views/bottom_nav/bottom_nav_view.dart' as _i15;
 import 'package:my_test_app/ui/views/confirmation/confirmation_view.dart'
     as _i12;
 import 'package:my_test_app/ui/views/counter/counter_view.dart' as _i2;
@@ -16,14 +17,17 @@ import 'package:my_test_app/ui/views/create_cards/create_cards_view.dart'
 import 'package:my_test_app/ui/views/get_otp/get_otp_view.dart' as _i8;
 import 'package:my_test_app/ui/views/home/home_view.dart' as _i9;
 import 'package:my_test_app/ui/views/launch/launch_view.dart' as _i3;
+import 'package:my_test_app/ui/views/notification/notification_view.dart'
+    as _i14;
 import 'package:my_test_app/ui/views/otp/otp_view.dart' as _i7;
+import 'package:my_test_app/ui/views/profile/profile_view.dart' as _i13;
 import 'package:my_test_app/ui/views/sign_up/sign_up_view.dart' as _i6;
 import 'package:my_test_app/ui/views/signin/signin_view.dart' as _i5;
 import 'package:my_test_app/ui/views/transactions/transactions_view.dart'
     as _i11;
 import 'package:my_test_app/ui/views/welcome/welcome_view.dart' as _i4;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i14;
+import 'package:stacked_services/stacked_services.dart' as _i17;
 
 class Routes {
   static const counterView = '/';
@@ -48,6 +52,12 @@ class Routes {
 
   static const confirmationView = '/confirmation-view';
 
+  static const profileView = '/profile-view';
+
+  static const notificationView = '/notification-view';
+
+  static const bottomNavView = '/bottom-nav-view';
+
   static const all = <String>{
     counterView,
     launchView,
@@ -60,6 +70,9 @@ class Routes {
     createCardsView,
     transactionsView,
     confirmationView,
+    profileView,
+    notificationView,
+    bottomNavView,
   };
 }
 
@@ -76,6 +89,9 @@ class StackedRouter extends _i1.RouterBase {
     _i1.RouteDef(Routes.createCardsView, page: _i10.CreateCardsView),
     _i1.RouteDef(Routes.transactionsView, page: _i11.TransactionsView),
     _i1.RouteDef(Routes.confirmationView, page: _i12.ConfirmationView),
+    _i1.RouteDef(Routes.profileView, page: _i13.ProfileView),
+    _i1.RouteDef(Routes.notificationView, page: _i14.NotificationView),
+    _i1.RouteDef(Routes.bottomNavView, page: _i15.BottomNavView),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
@@ -83,7 +99,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<CounterViewArguments>(
         orElse: () => const CounterViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i2.CounterView(key: args.key),
         settings: data,
       );
@@ -92,7 +108,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<LaunchViewArguments>(
         orElse: () => const LaunchViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i3.LaunchView(key: args.key),
         settings: data,
       );
@@ -101,7 +117,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<WelcomeViewArguments>(
         orElse: () => const WelcomeViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i4.WelcomeView(key: args.key),
         settings: data,
       );
@@ -110,7 +126,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<SigninViewArguments>(
         orElse: () => const SigninViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i5.SigninView(key: args.key),
         settings: data,
       );
@@ -119,7 +135,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<SignUpViewArguments>(
         orElse: () => const SignUpViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i6.SignUpView(key: args.key),
         settings: data,
       );
@@ -128,14 +144,14 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<OtpViewArguments>(
         orElse: () => const OtpViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i7.OtpView(key: args.key),
         settings: data,
       );
     },
     _i8.GetOtpView: (data) {
       final args = data.getArgs<GetOtpViewArguments>(nullOk: false);
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i8.GetOtpView(phoneNumber: args.phoneNumber, key: args.key),
         settings: data,
@@ -145,7 +161,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<HomeViewArguments>(
         orElse: () => const HomeViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i9.HomeView(key: args.key),
         settings: data,
       );
@@ -154,7 +170,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<CreateCardsViewArguments>(
         orElse: () => const CreateCardsViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i10.CreateCardsView(key: args.key),
         settings: data,
       );
@@ -163,7 +179,7 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<TransactionsViewArguments>(
         orElse: () => const TransactionsViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i11.TransactionsView(key: args.key),
         settings: data,
       );
@@ -172,8 +188,35 @@ class StackedRouter extends _i1.RouterBase {
       final args = data.getArgs<ConfirmationViewArguments>(
         orElse: () => const ConfirmationViewArguments(),
       );
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i16.MaterialPageRoute<dynamic>(
         builder: (context) => _i12.ConfirmationView(key: args.key),
+        settings: data,
+      );
+    },
+    _i13.ProfileView: (data) {
+      final args = data.getArgs<ProfileViewArguments>(
+        orElse: () => const ProfileViewArguments(),
+      );
+      return _i16.MaterialPageRoute<dynamic>(
+        builder: (context) => _i13.ProfileView(key: args.key),
+        settings: data,
+      );
+    },
+    _i14.NotificationView: (data) {
+      final args = data.getArgs<NotificationViewArguments>(
+        orElse: () => const NotificationViewArguments(),
+      );
+      return _i16.MaterialPageRoute<dynamic>(
+        builder: (context) => _i14.NotificationView(key: args.key),
+        settings: data,
+      );
+    },
+    _i15.BottomNavView: (data) {
+      final args = data.getArgs<BottomNavViewArguments>(
+        orElse: () => const BottomNavViewArguments(),
+      );
+      return _i16.MaterialPageRoute<dynamic>(
+        builder: (context) => _i15.BottomNavView(key: args.key),
         settings: data,
       );
     },
@@ -189,7 +232,7 @@ class StackedRouter extends _i1.RouterBase {
 class CounterViewArguments {
   const CounterViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -211,7 +254,7 @@ class CounterViewArguments {
 class LaunchViewArguments {
   const LaunchViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -233,7 +276,7 @@ class LaunchViewArguments {
 class WelcomeViewArguments {
   const WelcomeViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -255,7 +298,7 @@ class WelcomeViewArguments {
 class SigninViewArguments {
   const SigninViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -277,7 +320,7 @@ class SigninViewArguments {
 class SignUpViewArguments {
   const SignUpViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -299,7 +342,7 @@ class SignUpViewArguments {
 class OtpViewArguments {
   const OtpViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -323,7 +366,7 @@ class GetOtpViewArguments {
 
   final String phoneNumber;
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -345,7 +388,7 @@ class GetOtpViewArguments {
 class HomeViewArguments {
   const HomeViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -367,7 +410,7 @@ class HomeViewArguments {
 class CreateCardsViewArguments {
   const CreateCardsViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -389,7 +432,7 @@ class CreateCardsViewArguments {
 class TransactionsViewArguments {
   const TransactionsViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -411,7 +454,7 @@ class TransactionsViewArguments {
 class ConfirmationViewArguments {
   const ConfirmationViewArguments({this.key});
 
-  final _i13.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -430,9 +473,75 @@ class ConfirmationViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i14.NavigationService {
+class ProfileViewArguments {
+  const ProfileViewArguments({this.key});
+
+  final _i16.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant ProfileViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode;
+  }
+}
+
+class NotificationViewArguments {
+  const NotificationViewArguments({this.key});
+
+  final _i16.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant NotificationViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode;
+  }
+}
+
+class BottomNavViewArguments {
+  const BottomNavViewArguments({this.key});
+
+  final _i16.Key? key;
+
+  @override
+  String toString() {
+    return '{"key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant BottomNavViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return key.hashCode;
+  }
+}
+
+extension NavigatorStateExtension on _i17.NavigationService {
   Future<dynamic> navigateToCounterView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -450,7 +559,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToLaunchView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -468,7 +577,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToWelcomeView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -486,7 +595,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToSigninView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -504,7 +613,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToSignUpView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -522,7 +631,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToOtpView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -541,7 +650,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
 
   Future<dynamic> navigateToGetOtpView({
     required String phoneNumber,
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -559,7 +668,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToHomeView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -577,7 +686,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToCreateCardsView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -595,7 +704,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToTransactionsView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -613,7 +722,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> navigateToConfirmationView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -630,8 +739,62 @@ extension NavigatorStateExtension on _i14.NavigationService {
     );
   }
 
+  Future<dynamic> navigateToProfileView({
+    _i16.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(
+      Routes.profileView,
+      arguments: ProfileViewArguments(key: key),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
+  }
+
+  Future<dynamic> navigateToNotificationView({
+    _i16.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(
+      Routes.notificationView,
+      arguments: NotificationViewArguments(key: key),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
+  }
+
+  Future<dynamic> navigateToBottomNavView({
+    _i16.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return navigateTo<dynamic>(
+      Routes.bottomNavView,
+      arguments: BottomNavViewArguments(key: key),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
+  }
+
   Future<dynamic> replaceWithCounterView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -649,7 +812,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithLaunchView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -667,7 +830,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithWelcomeView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -685,7 +848,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithSigninView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -703,7 +866,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithSignUpView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -721,7 +884,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithOtpView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -740,7 +903,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
 
   Future<dynamic> replaceWithGetOtpView({
     required String phoneNumber,
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -758,7 +921,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithHomeView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -776,7 +939,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithCreateCardsView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -794,7 +957,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithTransactionsView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -812,7 +975,7 @@ extension NavigatorStateExtension on _i14.NavigationService {
   }
 
   Future<dynamic> replaceWithConfirmationView({
-    _i13.Key? key,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -822,6 +985,60 @@ extension NavigatorStateExtension on _i14.NavigationService {
     return replaceWith<dynamic>(
       Routes.confirmationView,
       arguments: ConfirmationViewArguments(key: key),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
+  }
+
+  Future<dynamic> replaceWithProfileView({
+    _i16.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(
+      Routes.profileView,
+      arguments: ProfileViewArguments(key: key),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
+  }
+
+  Future<dynamic> replaceWithNotificationView({
+    _i16.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(
+      Routes.notificationView,
+      arguments: NotificationViewArguments(key: key),
+      id: routerId,
+      preventDuplicates: preventDuplicates,
+      parameters: parameters,
+      transition: transition,
+    );
+  }
+
+  Future<dynamic> replaceWithBottomNavView({
+    _i16.Key? key,
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  }) async {
+    return replaceWith<dynamic>(
+      Routes.bottomNavView,
+      arguments: BottomNavViewArguments(key: key),
       id: routerId,
       preventDuplicates: preventDuplicates,
       parameters: parameters,

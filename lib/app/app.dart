@@ -16,6 +16,9 @@ import 'package:my_test_app/ui/views/create_cards/create_cards_view.dart';
 import 'package:my_test_app/ui/views/transactions/transactions_view.dart';
 import 'package:my_test_app/ui/views/confirmation/confirmation_view.dart';
 
+import 'package:my_test_app/ui/views/profile/profile_view.dart';
+import 'package:my_test_app/ui/views/notification/notification_view.dart';
+import 'package:my_test_app/ui/views/bottom_nav/bottom_nav_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -33,6 +36,9 @@ import 'package:my_test_app/ui/views/confirmation/confirmation_view.dart';
     MaterialRoute(page: TransactionsView),
     MaterialRoute(page: ConfirmationView),
 
+    MaterialRoute(page: ProfileView),
+    MaterialRoute(page: NotificationView),
+    MaterialRoute(page: BottomNavView),
 // @stacked-route
   ],
   dependencies: [
